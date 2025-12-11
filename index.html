@@ -120,6 +120,8 @@ input[type=range] {
 
 <section id="ableitung">
     <h2>Ableitungen & Regeln</h2>
+
+    <!-- Kettenregel -->
     <h3>Kettenregel – Vorgehensweise</h3>
     <p>Vorgehen: Unterscheiden zwischen innerer (v) und äußerer (u) Funktion:</p>
 
@@ -135,10 +137,9 @@ input[type=range] {
     </div>
 
     <div class="math">
-        g'(x) = u'(v) • v'(x) = 2(2x + x^2) • (2 + 2x)
+        g'(x) = u'(v) \cdot v'(x) = 2(2x + x^2) \cdot (2 + 2x)
     </div>
 
-    <p>Schritt-für-Schritt-Anleitung:</p>
     <ol>
         <li>Äußere und innere Funktion identifizieren</li>
         <li>Ableitungen der beiden Teilfunktionen berechnen</li>
@@ -152,8 +153,22 @@ input[type=range] {
 
     <h3>Endergebnis Kettenregel-Beispiel</h3>
     <div class="math">
-        g'(x) = (4x + 2x^2) • (2 + 2x) = 8x + 8x^2 + 4x + 4x^3
+        g'(x) = (4x + 2x^2) \cdot (2 + 2x) = 8x + 8x^2 + 4x + 4x^3
     </div>
+
+    <!-- Produktregel -->
+    <h3>Produktregel</h3>
+    <p>Wenn die Funktionen u(x) und v(x) ableitbar sind, dann gilt für die Ableitung der Funktion f(x) = u(x)·v(x):</p>
+
+    <div class="math">
+        f(x) = u(x) \cdot v(x)
+    </div>
+    <div class="math">
+        f'(x) = u'(x) \cdot v(x) + u(x) \cdot v'(x)
+    </div>
+
+    <p>Möchte man eine Funktion ableiten, deren Term das Produkt zweier Funktionen u und v ist, wendet man diese Produktregel an.</p>
+
 </section>
 
 
