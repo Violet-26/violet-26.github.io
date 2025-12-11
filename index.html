@@ -499,3 +499,122 @@ Plotly.newPlot('plot', [{x:xValues, y:yValues, mode:'lines', name:'f(x)=e^x', li
 
 </section>
 
+<section id="abitur">
+    <h2>Abituraufgaben – Exponentialfunktionen & e-Funktion</h2>
+    <p>
+        Die folgenden Aufgaben stammen aus typischen Abiturprüfungen 
+        und behandeln Anwendungen der e-Funktion, wie Wachstum, Ableitung,
+        Extremwerte und Modellierung.
+    </p>
+
+    <!-- Aufgabe 1 -->
+    <h3>Aufgabe 1 – Wachstum einer Population</h3>
+    <p><b>Gegeben:</b> Die Population eines Bakterienstammes wird durch</p>
+    <div class="math">
+        \[
+            f(t) = 500 \, e^{0.12 t}
+        \]
+    </div>
+    <p>beschrieben.</p>
+
+    <ol>
+        <li>Berechne die Anfangsgröße der Population.</li>
+        <li>Bestimme die Wachstumsrate pro Zeiteinheit.</li>
+        <li>Berechne, wann die Population 2000 Individuen erreicht.</li>
+    </ol>
+
+    <details>
+        <summary><b>Lösung anzeigen</b></summary>
+        <div class="math">
+            \[
+            f(0) = 500 e^0 = 500
+            \]
+        </div>
+
+        <div class="math">
+            \[
+                f(t) = 2000 
+                \quad\Longrightarrow\quad 
+                2000 = 500 e^{0.12 t}
+            \]
+            \[
+                4 = e^{0.12 t}
+                \quad\Longrightarrow\quad
+                t = \frac{\ln 4}{0.12} \approx 11.55
+            \]
+        </div>
+    </details>
+
+    <!-- Aufgabe 2 -->
+    <h3>Aufgabe 2 – Logistische Funktion</h3>
+    <p>Eine logistische Wachstumsfunktion ist gegeben durch</p>
+    <div class="math">
+        \[
+            f(t) = \frac{300}{1 + 14 e^{-0.4 t}}
+        \]
+    </div>
+
+    <ol>
+        <li>Bestimme die Sättigungsgrenze.</li>
+        <li>Berechne die Ableitung \( f'(t) \).</li>
+        <li>Ermittle die maximale Wachstumsgeschwindigkeit.</li>
+    </ol>
+
+    <details>
+        <summary><b>Lösung anzeigen</b></summary>
+        <div class="math">
+            \[
+                \text{Sättigungsgrenze} = 300
+            \]
+        </div>
+
+        <div class="math">
+            \[
+            f'(t) 
+            = 
+            \frac{300 \cdot 14 \cdot 0.4 \, e^{-0.4 t}}
+            {(1+14e^{-0.4 t})^2}
+            \]
+        </div>
+
+        <p>Das Wachstum ist maximal bei</p>
+        <div class="math">
+            \[
+                t = \frac{1}{0.4}\ln(14)
+            \]
+        </div>
+    </details>
+
+    <!-- Aufgabe 3 -->
+    <h3>Aufgabe 3 – Tangente an e-Funktion</h3>
+    <p>Gegeben ist die Funktion</p>
+    <div class="math">
+        \[
+            f(x) = e^{0.5x - 1}
+        \]
+    </div>
+
+    <p>Berechne die Gleichung der Tangente im Punkt \( x = 2 \).</p>
+
+    <details>
+        <summary><b>Lösung anzeigen</b></summary>
+        <div class="math">
+            \[
+            f(2) = e^{0}
+            = 1
+            \]
+            \[
+            f'(x) = 0.5 e^{0.5x - 1}
+            \]
+            \[
+            f'(2) = 0.5
+            \]
+            Tangente:
+            \[
+                y = 0.5(x - 2) + 1
+            \]
+        </div>
+    </details>
+
+</section>
+
