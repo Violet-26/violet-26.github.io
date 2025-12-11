@@ -344,3 +344,158 @@ Plotly.newPlot('plot', [{x:xValues, y:yValues, mode:'lines', name:'f(x)=e^x', li
 
 </body>
 </html>
+
+<section id="graphen">
+    <h2>Graphen – Spiegelung, Verschiebung & Streckung der e-Funktion</h2>
+
+    <p>
+        Die e-Funktion \( f(x) = e^x \) kann wie jede Exponentialfunktion 
+        <b>gespiegelt</b>, <b>verschoben</b> und <b>gestreckt</b> werden.
+        Dabei entstehen neue Funktionen, die jedoch alle typische Eigenschaften
+        der e-Funktion behalten: keine Extrempunkte, keine Wendepunkte,
+        und alle Funktionswerte bleiben positiv.
+    </p>
+
+    <!-- Spiegelung -->
+    <h3>1) Spiegelungen</h3>
+
+    <h4>Spiegelung an der y-Achse</h4>
+    <div class="math">
+        \[ f(x) = e^x \quad \rightarrow \quad g(x) = e^{-x} \]
+    </div>
+    <canvas id="spiegel_y"></canvas>
+    <p>
+        Der Graph wird horizontal gespiegelt.  
+        Es entstehen weiterhin <b>keine Nullstellen, Extremwerte oder Wendepunkte</b>.
+    </p>
+
+    <h4>Spiegelung an der x-Achse</h4>
+    <div class="math">
+        \[ f(x) = e^x \quad \rightarrow \quad g(x) = -e^x \]
+    </div>
+    <canvas id="spiegel_x"></canvas>
+    <p>
+        Der Graph wird vertikal gespiegelt.  
+        Auch hier entstehen <b>keine Nullstellen, Extremwerte oder Wendepunkte</b>.
+    </p>
+
+
+    <!-- Verschiebung -->
+    <h3>2) Verschiebungen</h3>
+
+    <h4>Verschiebung in y-Richtung</h4>
+    <div class="math">
+        \[ g(x) = e^x + c \]
+    </div>
+    <canvas id="verschiebung_y"></canvas>
+    <p>
+        Der Graph wird um \( c \) Einheiten nach oben oder unten verschoben.  
+        Für \( c > 0 \): nach oben — für \( c < 0 \): nach unten.  
+        <br>Es entstehen weiterhin <b>keine Extremwerte oder Wendepunkte</b>.  
+    </p>
+
+    <p>
+        Beispiel mit Nullstelle:  
+        Wenn \( c = -1 \), also  
+        \[ g(x) = e^x - 1 \]  
+        besitzt der Graph <b>eine Nullstelle im Intervall [0; 1]</b>.
+    </p>
+
+    <h4>Verschiebung in x-Richtung</h4>
+    <div class="math">
+        \[ g(x) = e^{x - a} \]
+    </div>
+    <canvas id="verschiebung_x"></canvas>
+    <p>
+        Verschiebung nach rechts um \( a \) Einheiten,  
+        nach links um \( -a \).  
+        Keine Nullstellen, Extremwerte oder Wendepunkte.
+    </p>
+
+    
+    <!-- Streckung / Stauchung -->
+    <h3>3) Streckung und Stauchung</h3>
+
+    <h4>Streckung/Stauchung in y-Richtung</h4>
+    <div class="math">
+        \[ g(x) = k \cdot e^x \]
+    </div>
+    <canvas id="streckung_y"></canvas>
+    <p>
+        Der Graph wird für \( k > 1 \) gestreckt und für \( 0 < k < 1 \) gestaucht.  
+        Weiterhin keine Nullstellen oder Extrempunkte.
+    </p>
+
+    <h4>Streckung/Stauchung in x-Richtung</h4>
+    <div class="math">
+        \[ g(x) = e^{k x} \]
+    </div>
+    <canvas id="streckung_x"></canvas>
+
+    <p><b>Beispiel Stauchung:</b></p>
+    <div class="math">
+        \[
+            k = 2 \quad \Rightarrow \quad g(x) = e^{2x}
+        \]
+    </div>
+    <p>
+        Schnittpunkt mit der y-Achse bleibt:
+        \[
+            g(0) = e^0 = 1 \quad\Rightarrow\quad P(0|1)
+        \]
+        Randverhalten:
+        \[
+        \lim_{x\to -\infty} e^{2x} = 0, \qquad
+        \lim_{x\to +\infty} e^{2x} = \infty
+        \]
+    </p>
+
+    <p><b>Beispiel Streckung:</b></p>
+    <div class="math">
+        \[
+            k = \frac{1}{2} \quad \Rightarrow \quad g(x) = e^{\frac{x}{2}}
+        \]
+    </div>
+    <p>
+        Schnittpunkt bleibt wieder:
+        \[
+            g(0) = e^0 = 1
+        \]
+        Randverhalten:
+        \[
+        \lim_{x\to -\infty} e^{x/2} = 0, \qquad
+        \lim_{x\to +\infty} e^{x/2} = \infty
+        \]
+    </p>
+
+    <p>
+        Auch hier entstehen <b>keine Nullstellen, Extremwerte oder Wendepunkte</b>.
+    </p>
+
+
+    <!-- Kombinationen -->
+    <h3>4) Kombination von Transformationen</h3>
+    <p>
+        Spiegelungen, Verschiebungen und Streckungen können beliebig kombiniert werden.
+    </p>
+
+    <h4>Beispiel 1</h4>
+    <canvas id="kombination1"></canvas>
+    <p>
+        Verschiebung um 1 nach rechts und 2 nach oben:
+        \[
+            f_2(x) = e^{x - 1} + 2
+        \]
+    </p>
+
+    <h4>Beispiel 2</h4>
+    <canvas id="kombination2"></canvas>
+    <p>
+        Verschiebung um 2 nach links und 1 nach unten:
+        \[
+            f_2(x) = e^{x + 2} - 1
+        \]
+    </p>
+
+</section>
+
