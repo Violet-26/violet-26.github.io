@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Funktionen</title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Functions Explained</title>
+
+    <!-- MathJax for math typesetting -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .math {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Die e-Funktionen</h1>
+
+<p>Die e-Funktion ist definiert als:</p>
+
+<div class="math">
+    \( f(x) = e^x \)
+</div>
+
+<p>Die Ableitung davon ist:</p>
+
+<div class="math">
+    \( f'(x) = e^x \)
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>E-Funktionen Interaktiv</title>
+
+<!-- MathJax für Formeln -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!-- Plotly für Graphen -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+    }
+
+    nav {
+        background-color: #34495e;
+        color: white;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    section {
+        padding: 30px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+
+    .math {
+        font-size: 20px;
+        margin: 15px 0;
+        background: #ecf0f1;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .box {
+        background-color: #dff9fb;
+        border-left: 5px solid #22a6b3;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+    }
+
+    .example {
+        background-color: #f6e58d;
+        border-left: 5px solid #f9ca24;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    table, th, td {
+        border: 1px solid #bbb;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #3498db;
+        color: white;
+    }
+
+    #plot {
+        width: 100%;
+        height: 400px;
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#definition">Definition</a>
+    <a href="#eigenschaften">Eigenschaften</a>
+    <a href="#ableitung">Ableitungen</a>
+    <a href="#beispiele">Beispiele</a>
+    <a href="#graphen">Graphen</a>
+</nav>
+
+<section id="definition">
+    <h1>Definition der e-Funktion</h1>
+    <p>Die e-Funktion ist die Exponentialfunktion zur Basis <b>e</b>:</p>
+    <div class="math">
+        \( f(x) = e^x \)
+    </div>
+    <div class="box">
+        Merke: Die e-Funktion stimmt mit ihrer Ableitung überein:
+        <div class="math">
+            \( f'(x) = e^x \)
+        </div>
+    </div>
+</section>
+
+<section id="eigenschaften">
+    <h2>Eigenschaften</h2>
+    <ul>
+        <li>Graph verläuft durch P(0 | 1)</li>
+        <li>Streng monoton steigend, Funktionswerte > 0</li>
+        <li>Definitionsbereich: \( \mathbb{R} \)</li>
+        <li>Grenzwert: \( e = \lim_{n\to\infty} (1 + \frac{1}{n})^n \approx 2,71828 \)</li>
+    </ul>
+</section>
+
+<section id="ableitung">
+    <h2>Ableitungen & Regeln</h2>
+    <p>Kettenregel Beispiel:</p>
+    <div class="math">
+        \( g(x) = (2x + x^2)^2 \)<br>
+        \( g'(x) = 2(2x+x^2)(2+2x) = 8x + 8x^2 + 4x + 4x^3 \)
+    </div>
+    <div class="example">
+        Beispiel für Ableitung verketteter Funktionen:
+        <div class="math">
+            \( f(x) = \cos(0,5x - 3) \)<br>
+            \( f'(x) = -0,5 \sin(0,5x - 3) \)
+        </div>
+    </div>
+</section>
+
+<section id="beispiele">
+    <h2>Beispiele</h2>
+    <p>Exponentielles Wachstum & Abnahme:</p>
+    <div class="math">
+        \( f(t) = k \cdot (S - (S + (f(0)-S) \cdot e^{-kt})) \)
+    </div>
+</section>
+
+<section id="graphen">
+    <h2>Graphen</h2>
+    <div id="plot"></div>
+</section>
+
+<script>
+    // Plotly Beispiel: e-Funktion
+    let xValues = [];
+    let yValues = [];
+    for(let i=-5; i<=5; i+=0.1){
+        xValues.push(i);
+        yValues.push(Math.exp(i));
+    }
+
+    let trace = {
+        x: xValues,
+        y: yValues,
+        mode: 'lines',
+        line: {color: '#e67e22'},
+        name: 'f(x) = e^x'
+    };
+
+    Plotly.newPlot('plot', [trace], {
+        title: 'Graph der e-Funktion',
+        xaxis: {title: 'x'},
+        yaxis: {title: 'f(x)'}
+    });
+</script>
+
+</body>
+</html>
