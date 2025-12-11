@@ -182,15 +182,14 @@
 
 <section id="eigenschaften">
     <h2>Eigenschaften</h2>
-    <p>Eigenschaften:</p>
+    
 <ul style="list-style-type: square;">
 <li>Der Graph der e-Funktion, f(x) = e verl&auml;uft, wie die Graphen aller anderen Exponentialfunktionen durch den Punkt P(0 | 1)</li>
 <li>Der Graph ist streng monoton steigend: Je gr&ouml;&szlig;er die x-Werte werden, desto gr&ouml;&szlig;er werden die y-Werte. Die Funktionswerte wachsen unbeschr&auml;nkt</li>
 <li>Die Funktionswerte sind stets positiv</li>
 <li>Die Definitionsmenge ist  \( \mathbb{R} \), es k&ouml;nnen also alle reellen Zahlen eingesetzt werden</li>
 <li>je kleiner die x-Werte, desto n&auml;her verl&auml;uft der Graph an der x-Achse</li>
-<li>jede Funktion F mit F(x) = e + c ist eine Stammfunktion der e-Funktion f mit <div class="math">
-    \( f(x) = e^x \)</li>
+<li>jede Funktion F mit F(x) = e + c ist eine Stammfunktion der e-Funktion f mit \( f(x) = e^x \)</li>
 <li>Grenzwert: \( e = \lim_{n\to\infty} (1 + \frac{1}{n})^n \approx 2,71828 \)</li>
 </ul>
     </ul>
@@ -221,6 +220,209 @@
 </section>
 
 <section id="graphen">
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>e‑Funktionen — violet-26</title>
+<style>
+:root{--accent:#6a1b9a;--bg:#fafafa;--card:#fff;--muted:#555}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;margin:18px;background:var(--bg);color:#222}
+header{display:flex;align-items:center;gap:12px}
+h1{color:var(--accent);margin:0}
+.container{max-width:1100px;margin:18px auto}
+.grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+.card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.full{grid-column:1/-1}
+canvas{width:100%;height:320px;border-radius:6px;border:1px solid #e8e8e8;background:#fff;display:block}
+label{display:block;font-size:0.9rem;margin-top:8px}
+input[type=range]{width:100%}
+.muted{color:var(--muted);font-size:0.95em}
+pre{background:#f4f4f4;padding:8px;overflow:auto;border-radius:6px}
+footer{margin-top:14px;color:var(--muted);font-size:0.9em}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8e24aa)"></div>
+<div>
+<h1>e‑Funktionen → interaktiv & Erklärungen</h1>
+</div>
+</header>
+
+<section class="card">
+<h3>Parameter‑Steuerung</h3>
+<label>k (Exponentfaktor) <span id="kVal">1.00</span></label>
+<input id="k" type="range" min="-3" max="3" step="0.01" value="1">
+<label>n (y‑Verschiebung im Exponenten) <span id="nVal">0.00</span></label>
+<input id="n" type="range" min="-5" max="5" step="0.01" value="0">
+<label>S (Sättigungsgrenze) <span id="sVal">10</span></label>
+<input id="S" type="range" min="1" max="50" step="1" value="10">
+<label>A (Startparameter) <span id="aVal">9</span></label>
+<input id="A" type="range" min="0.1" max="50" step="0.1" value="9">
+</section>
+
+<section class="card">
+<h3>Formeln & Ableitungen (Kurz)</h3>
+<div class="math">
+\[ f(x) = e^x \quad \Rightarrow \quad f'(x) = e^x \]
+\[ f(x) = e^{kx + n} \quad \Rightarrow \quad f'(x) = k \, e^{kx + n} \]
+\[ f(x) = a \cdot b^x = a \cdot e^{x \ln b} \quad \Rightarrow \quad \frac{d}{dx} \bigl(a b^x\bigr) = a \ln(b) \, e^{x \ln b} \]
+\[ f(t) = \frac{S}{1 + A \, e^{-k t}} \]
+</div>
+</section>
+
+<section class="card full">
+<h2>Interaktive Graphen</h2>
+<p class="muted">Passe k, n, S, A oben an — die Graphen aktualisieren sich automatisch.</p>
+
+<div class="math">
+    \[ e^{kx + n}, \quad e^x \]
+</div>
+<canvas id="c1"></canvas>
+<div class="muted">rot: \( e^{kx + n} \) — blau: \( e^x \)</div>
+
+<h4 style="margin-top:12px">2) Spiegelung/Skalierung & logistische Kurve</h4>
+<canvas id="c2"></canvas>
+<div class="muted">
+    grün: \( -e^{-x} \) (Beispiel Spiegelung),  
+    dunkelgrün: logistische Kurve \( \frac{S}{1 + A e^{-kx}} \)
+</div>
+</section>
+
+<section class="card full">
+<h3>Hinweis</h3>
+<p class="muted">Diese Seite nutzt einfache Canvas‑Plots nur mit JavaScript (kein externes Lib). Du kannst CSS/JS weiter auslagern oder interaktive Sliders mit Bibliotheken (z. B. noUiSlider) ersetzen.</p>
+</section>
+
+<footer class="card full">
+<div class="muted">Anmerkung: Inhalte und Formeln aus deiner PDF sind als Grundlage verwendet <source_id data="1" title="e%20funktionen.pdf" />. Wenn du spezifische Stellen aus der PDF zusätzlich gerendert haben möchtest (z. B. mehr Beispiele, Textblöcke oder Rechnungsschritte), sag Bescheid — ich ergänze sie direkt.</div>
+</footer>
+</div>
+
+<script>
+// Utility: responsive canvas setup
+function setupCanvas(canvas) {
+    const DPR = window.devicePixelRatio || 1;
+    canvas.width = canvas.clientWidth * DPR;
+    canvas.height = canvas.clientHeight * DPR;
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    return ctx;
+}
+
+// Draw functions on a canvas with auto y-scale
+function plot(canvasId, fns, xmin=-6, xmax=6) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = setupCanvas(canvas);
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    ctx.clearRect(0,0,w,h);
+
+    const samples = 1000;
+    let ys = [];
+    for (let i=0;i<=samples;i++){
+        const x = xmin + (xmax-xmin)*i/samples;
+        fns.forEach(fn => {
+            try { const y = fn.f(x); if (isFinite(y)) ys.push(y); } catch(e){}
+        });
+    }
+
+    let ymin = Math.min(...ys), ymax = Math.max(...ys);
+    if (!isFinite(ymin) || !isFinite(ymax)) { ymin=-10; ymax=10; }
+    if (ymin === ymax) { ymin -= 1; ymax += 1; }
+    const yr = ymax - ymin;
+    ymin -= yr*0.14; ymax += yr*0.14;
+
+    const X = x => (x - xmin)/(xmax - xmin) * w;
+    const Y = y => h - (y - ymin)/(ymax - ymin) * h;
+
+    // grid
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='#eee'; ctx.lineWidth=1;
+
+    for (let gx = Math.ceil(xmin); gx <= Math.floor(xmax); gx++){
+        const px = X(gx);
+        ctx.beginPath(); ctx.moveTo(px,0); ctx.lineTo(px,h); ctx.stroke();
+    }
+
+    for (let gy = Math.ceil(ymin); gy <= Math.floor(ymax); gy++){
+        const py = Y(gy);
+        ctx.beginPath(); ctx.moveTo(0,py); ctx.lineTo(w,py); ctx.stroke();
+    }
+
+    // axes
+    ctx.strokeStyle='#333'; ctx.lineWidth=1.2;
+    if (xmin <= 0 && xmax >= 0){ ctx.beginPath(); ctx.moveTo(X(0),0); ctx.lineTo(X(0),h); ctx.stroke(); }
+    if (ymin <= 0 && ymax >= 0){ ctx.beginPath(); ctx.moveTo(0,Y(0)); ctx.lineTo(w,Y(0)); ctx.stroke(); }
+
+    // draw functions
+    fns.forEach(fn => {
+        ctx.beginPath(); ctx.lineWidth = fn.width || 2; ctx.strokeStyle = fn.color || '#000'; ctx.setLineDash(fn.dash || []);
+        let started=false;
+        for (let i=0;i<=samples;i++){
+            const x = xmin + (xmax-xmin)*i/samples;
+            let y = NaN;
+            try { y = fn.f(x); } catch(e){ y = NaN; }
+            if (!isFinite(y)) { started=false; continue; }
+            const px = X(x), py = Y(y);
+            if (!started){ ctx.moveTo(px,py); started=true; } else ctx.lineTo(px,py);
+        }
+        ctx.stroke(); ctx.setLineDash([]);
+    });
+
+    // labels
+    ctx.fillStyle='#333'; ctx.font='12px sans-serif';
+    ctx.fillText('x='+xmin.toFixed(1), 6, h-6);
+    ctx.fillText('x='+xmax.toFixed(1), w-60, h-6);
+}
+
+// Controls
+const kCtrl = document.getElementById('k');
+const nCtrl = document.getElementById('n');
+const Sctrl = document.getElementById('S');
+const Actrl = document.getElementById('A');
+const kVal = document.getElementById('kVal');
+const nVal = document.getElementById('nVal');
+const sVal = document.getElementById('sVal');
+const aVal = document.getElementById('aVal');
+
+function updateLabels(){
+    kVal.textContent = parseFloat(kCtrl.value).toFixed(2);
+    nVal.textContent = parseFloat(nCtrl.value).toFixed(2);
+    sVal.textContent = Sctrl.value;
+    aVal.textContent = parseFloat(Actrl.value).toFixed(1);
+}
+
+function redraw(){
+    const k = parseFloat(kCtrl.value);
+    const n = parseFloat(nCtrl.value);
+    const S = parseFloat(Sctrl.value);
+    const A = parseFloat(Actrl.value);
+
+    // plot1: e^{kx + n} (rot) and e^x (blue)
+    plot('c1', [
+        {f: x => Math.exp(k*x + n), color:'#e53935', width:2},
+        {f: x => Math.exp(x), color:'#1e88e5', width:2, dash:[6,4]}
+    ]);
+
+    // plot2: -e^{-x} and logistic S/(1+A e^{-k x})
+    plot('c2', [
+        {f: x => -Math.exp(-x), color:'#4caf50', width:2},
+        {f: x => S / (1 + A * Math.exp(-k * x)), color:'#2e7d32', width:2}
+    ]);
+}
+
+// initial draw
+updateLabels(); redraw();
+[kCtrl,nCtrl,Sctrl,Actrl].forEach(el => el.addEventListener('input', () => { updateLabels(); redraw(); }));
+window.addEventListener('resize', () => { redraw(); });
+</script>
+</body>
+</html>
+
     <h2>Graphen</h2>
     <div id="plot"></div>
 </section>
