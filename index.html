@@ -120,31 +120,42 @@ input[type=range] {
 
 <section id="ableitung">
     <h2>Ableitungen & Regeln</h2>
-    
-    <p>Kettenregel-Beispiel:</p>
+    <h3>Kettenregel – Vorgehensweise</h3>
+    <p>Vorgehen: Unterscheiden zwischen innerer (v) und äußerer (u) Funktion:</p>
+
     <div class="math">
-        \( g(x) = (2x + x^2)^2 \)<br>
-        \( g'(x) = 8x + 8x^2 + 4x + 4x^3 \)
+        g(x) = (2x + x^2)^2
     </div>
 
-    <div class="card">
-        Beispiel verketteter Funktionen:
-        <div class="math">
-            \( f(x) = \cos(0,5x - 3) \)<br>
-            \( f'(x) = -0,5 \sin(0,5x - 3) \)
-        </div>
+    <div class="math">
+        v(x) = 2x + x^2 <br>
+        v'(x) = 2 + 2x <br>
+        u(v) = v^2 <br>
+        u'(v) = 2v
     </div>
 
-    <div class="card">
-        <h3>Vorgehen:</h3>
-        <ol>
-            <li>Unterscheide zwischen innerer Funktion \(v(x)\) und äußerer Funktion \(u(x)\)</li>
-            <li>Identifiziere die äußere und innere Funktion</li>
-            <li>Berechne die Ableitungen der beiden Teilfunktionen</li>
-            <li>Setze die Zwischenergebnisse in die Kettenregel-Formel ein</li>
-        </ol>
+    <div class="math">
+        g'(x) = u'(v) • v'(x) = 2(2x + x^2) • (2 + 2x)
+    </div>
+
+    <p>Schritt-für-Schritt-Anleitung:</p>
+    <ol>
+        <li>Äußere und innere Funktion identifizieren</li>
+        <li>Ableitungen der beiden Teilfunktionen berechnen</li>
+        <li>Zwischenergebnisse in die Formel einsetzen</li>
+    </ol>
+
+    <h3>Beispiel 2: f(x) = tan(x)</h3>
+    <div class="math">
+        f'(x) = \frac{1}{\cos^2(x)}
+    </div>
+
+    <h3>Endergebnis Kettenregel-Beispiel</h3>
+    <div class="math">
+        g'(x) = (4x + 2x^2) • (2 + 2x) = 8x + 8x^2 + 4x + 4x^3
     </div>
 </section>
+
 
 <section id="beispiele">
 
